@@ -14,7 +14,7 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
 
 # Inisialisasi client Gemini
 client = genai.Client(
-    api_key="AIzaSyBc1rGJPG98CDBbqcIJ7P7cpFFeSaU_baQ"
+    api_key=os.environ.get('GEMINI_API_KEY')  # Menggunakan variabel lingkungan untuk kunci API
 )
 
 def analyze_image(image_path, prompt_type):
